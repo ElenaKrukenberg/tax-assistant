@@ -1,0 +1,1106 @@
+{
+  "k_values": [
+    5,
+    6,
+    7,
+    8,
+    10,
+    12
+  ],
+  "k_max": 12,
+  "model": "anthropic/claude-haiku-4.5",
+  "strategies": [
+    "lexical",
+    "metadata",
+    "semantic"
+  ],
+  "cases": [
+    {
+      "id": "know-entfernungspauschale-rate",
+      "category": "knowledge",
+      "search_query": "Entfernungspauschale 2025 Höhe Satz",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "esth-2025-par-101-109-mobilitaetspraemie",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-anhang-17a-fahrten-mit-o-ffentlichen",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": "lsth-2022-anhang-14-entfernungspauschalen",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "know-homeoffice-pauschale",
+      "category": "knowledge",
+      "search_query": "Homeoffice Pauschale Betrag Anlage N",
+      "filters": {
+        "topics": [
+          "homeoffice_pauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Homeoffice",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "curated-validation-rules",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025",
+        "curated-validation-rules",
+        "lsth-2025-anhang-19-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-ii-ha-usliches-arbeitszimmer"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "know-arbeitsmittel-gwg",
+      "category": "knowledge",
+      "search_query": "Arbeitsmittel Laptop Abschreibung Anschaffungskosten Sofortabschreibung Grenze",
+      "filters": {
+        "topics": [
+          "arbeitsmittel",
+          "expense_classification"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Arbeitsmit",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "curated-expense-classification",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "curated-expense-classification"
+      ],
+      "reference_context_ids": [
+        "curated-validation-rules",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "know-pauschbetrag",
+      "category": "knowledge",
+      "search_query": "Arbeitnehmer-Pauschbetrag Höhe 2025",
+      "filters": {
+        "topics": [
+          "pauschbetrag"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "estg-09a-pauschbetraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "curated-validation-rules",
+        "estg-09a-pauschbetraege"
+      ],
+      "primary_context_id": "estg-09a-pauschbetraege",
+      "reference_rank": 5,
+      "primary_rank": 5,
+      "candidates": 12
+    },
+    {
+      "id": "know-berufsverbaende",
+      "category": "knowledge",
+      "search_query": "Gewerkschaftsbeiträge Absetzbarkeit Anlage N",
+      "filters": {
+        "topics": [
+          "berufsverbaende",
+          "anlage_n_grundlagen"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Gewerkscha",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "estg-09a-pauschbetraege",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "lsth-2025-anhang-13a-elektronische",
+        "055-anleitung-anlage-n-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "esth-2025-par-19-nichtselbstaendige-arbeit",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": "lsth-2025-par-9-werbungskosten",
+      "reference_rank": 1,
+      "primary_rank": 3,
+      "candidates": 12
+    },
+    {
+      "id": "know-telefon-internet",
+      "category": "knowledge",
+      "search_query": "Telefon Internet Kosten Abzug ohne Belege Nachweis",
+      "filters": {
+        "topics": [
+          "telefon_internet",
+          "belege"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Internet",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-par-9-werbungskosten",
+        "curated-validation-rules",
+        "curated-expense-classification",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-anhang-18a-gemischte-aufwendungen",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "curated-validation-rules",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": "curated-validation-rules",
+      "reference_rank": 1,
+      "primary_rank": 2,
+      "candidates": 12
+    },
+    {
+      "id": "know-verpflegungsmehraufwand",
+      "category": "knowledge",
+      "search_query": "Verpflegungspauschale Dienstreise Inland",
+      "filters": {
+        "topics": [
+          "reisekosten"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Dienstreis",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "reisekosten-bmf-2024-12-02",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "reisekosten-bmf-2024-12-02",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "reisekosten-bmf-2024-12-02",
+        "reisekosten-bmf-2024-12-02",
+        "reisekosten-bmf-2024-12-02",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "curated-validation-rules",
+        "reisekosten-bmf-2024-12-02"
+      ],
+      "primary_context_id": "reisekosten-bmf-2024-12-02",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "know-dhf-miete",
+      "category": "knowledge",
+      "search_query": "Doppelte Haushaltsführung Miete Abzug Werbungskosten",
+      "filters": {
+        "topics": [
+          "doppelte_haushaltsfuehrung"
+        ],
+        "line": null,
+        "form_id": "anlage_n_dhf"
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025"
+      ],
+      "reference_context_ids": [
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "curated-validation-rules"
+      ],
+      "primary_context_id": "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "field-zeile-31",
+      "category": "field_explanation",
+      "search_query": "Zeile 31 Anlage N Inhalt",
+      "filters": {
+        "topics": [
+          "anlage_n_grundlagen",
+          "form_fields"
+        ],
+        "line": 31,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "line:31",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "057-anleitung-anlage-n-aus-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "esth-2025-par-3-steuerfreie-einnahmen",
+        "esth-2025-par-3-steuerfreie-einnahmen"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025"
+      ],
+      "primary_context_id": "055-anleitung-anlage-n-2025",
+      "reference_rank": 3,
+      "primary_rank": 3,
+      "candidates": 12
+    },
+    {
+      "id": "field-zeile-53",
+      "category": "field_explanation",
+      "search_query": "Zeile 53 Anlage N Eintrag",
+      "filters": {
+        "topics": [
+          "anlage_n_grundlagen",
+          "form_fields"
+        ],
+        "line": 53,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "line:53",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-13a-elektronische",
+        "lsth-2025-anhang-13a-elektronische",
+        "lsth-2025-anhang-13a-elektronische",
+        "lsth-2025-anhang-13a-elektronische",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-13a-elektronische"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025"
+      ],
+      "primary_context_id": "055-anleitung-anlage-n-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "field-lohnsteuerbescheinigung",
+      "category": "field_explanation",
+      "search_query": "Lohnsteuerbescheinigung Anlage N Eintragung Felder Zeilen",
+      "filters": {
+        "topics": [
+          "anlage_n_grundlagen",
+          "lohnsteuerbescheinigung"
+        ],
+        "line": null,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "lexical:Eintragung",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-23-lohnsteuerbescheinigung",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung",
+        "lsth-2025-anhang-23-ii-lohnsteuerbescheinigung",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung",
+        "lsth-2025-anhang-13a-elektronische",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-23-i-lohnsteuerbescheinigung"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "calc-commute-220-25",
+      "category": "calculation",
+      "search_query": "Entfernungspauschale 220 Tage 25 km einfache Entfernung eigenes Auto Berechnung",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-anhang-17a-fahrten-mit-o-ffentlichen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "primary_context_id": "lsth-2022-anhang-14-entfernungspauschalen",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "calc-homeoffice-150",
+      "category": "calculation",
+      "search_query": "Homeoffice-Pauschale 150 Tage Berechnung Absetzbarkeit",
+      "filters": {
+        "topics": [
+          "homeoffice_pauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Homeoffice",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer"
+      ],
+      "reference_context_ids": [
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 2,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "calc-arbeitsmittel-afa",
+      "category": "calculation",
+      "search_query": "Arbeitsmittel Laptop Abschreibung Anschaffungskosten 2025",
+      "filters": {
+        "topics": [
+          "arbeitsmittel",
+          "anlage_n_grundlagen"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Arbeitsmit",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "calc-pauschbetrag-vergleich",
+      "category": "calculation",
+      "search_query": "Werbungskosten 1100 Euro Einzelaufstellung oder Pauschbetrag Anlage N",
+      "filters": {
+        "topics": [
+          "pauschbetrag",
+          "anlage_n_grundlagen"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Einzelaufs",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "estg-09a-pauschbetraege",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025"
+      ],
+      "reference_context_ids": [
+        "estg-09a-pauschbetraege"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 2,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "clarify-missing-inputs",
+      "category": "insufficient_data",
+      "search_query": "Entfernungspauschale Arbeitsweg Berechnung",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "clarify-vage-arbeitsmittel",
+      "category": "insufficient_data",
+      "search_query": "Anschaffungskosten Betriebsausgaben Werbungskosten absetzen",
+      "filters": {
+        "topics": [
+          "arbeitsmittel",
+          "expense_classification"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Anschaffun",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 1,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "multiturn-distance-after-days",
+      "category": "multi_turn",
+      "search_query": "Entfernungspauschale 150 Arbeitstage 74 km einfache Entfernung berechnen",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "lexical:Arbeitstag",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-anhang-17a-fahrten-mit-o-ffentlichen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "primary_context_id": "lsth-2022-anhang-14-entfernungspauschalen",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "multiturn-followup-cap",
+      "category": "multi_turn",
+      "search_query": "Entfernungspauschale Höchstgrenze 4500 Euro Jahresgrenze",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Höchstgren",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-anhang-23a-pauschalierung-der",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-anhang-23a-pauschalierung-der",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 2,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "ambiguous-arbeitszimmer",
+      "category": "ambiguous",
+      "search_query": "Arbeitszimmer Absetzbarkeit Voraussetzungen",
+      "filters": {
+        "topics": [
+          "arbeitszimmer"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2024-ertragsteuerliche-beurteilung-der",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer"
+      ],
+      "reference_context_ids": [
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 2,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "ml-ru-homeoffice",
+      "category": "multilingual",
+      "search_query": "Homeoffice Pauschale 2025 Höhe Betrag",
+      "filters": {
+        "topics": [
+          "homeoffice_pauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Homeoffice",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "curated-validation-rules",
+        "lsth-2025-anhang-19-ha-usliches-arbeitszimmer",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-tabellarische-uebersicht-betraege",
+        "lsth-2025-tabellarische-uebersicht-betraege"
+      ],
+      "reference_context_ids": [
+        "curated-validation-rules",
+        "lsth-2025-anhang-19-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-i-ha-usliches-arbeitszimmer",
+        "lsth-2025-anhang-19-ii-ha-usliches-arbeitszimmer"
+      ],
+      "primary_context_id": null,
+      "reference_rank": 2,
+      "primary_rank": null,
+      "candidates": 12
+    },
+    {
+      "id": "ml-en-commute",
+      "category": "multilingual",
+      "search_query": "Entfernungspauschale 2025 Höhe Betrag",
+      "filters": {
+        "topics": [
+          "entfernungspauschale"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "esth-2025-par-101-109-mobilitaetspraemie",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2022-anhang-14-entfernungspauschalen",
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "primary_context_id": "lsth-2022-anhang-14-entfernungspauschalen",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "know-bewerbungskosten",
+      "category": "knowledge",
+      "search_query": "Bewerbungskosten absetzen erfolglose Bewerbung Anlage N",
+      "filters": {
+        "topics": [
+          "bewerbungskosten"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Bewerbung",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "curated-expense-classification",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025"
+      ],
+      "primary_context_id": "055-anleitung-anlage-n-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "know-umzugskosten-voraussetzung",
+      "category": "knowledge",
+      "search_query": "Umzugskosten Werbungskosten Geltendmachung Voraussetzungen",
+      "filters": {
+        "topics": [
+          "umzugskosten"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "lsth-2025-anhang-29-iv-2-umzugskosten",
+        "lsth-2025-anhang-29-ii-umzugskosten",
+        "lsth-2025-anhang-29-ii-1-umzugskosten",
+        "lsth-2025-anhang-29-i-umzugskosten",
+        "lsth-2025-anhang-29-iii-umzugskosten",
+        "lsth-2025-anhang-29-ii-umzugskosten",
+        "lsth-2025-anhang-29-ii-1-umzugskosten",
+        "lsth-2025-anhang-29-iii-umzugskosten",
+        "lsth-2025-anhang-29-iii-umzugskosten",
+        "lsth-2025-anhang-29-ii-umzugskosten",
+        "lsth-2025-anhang-29-ii-1-umzugskosten",
+        "lsth-2025-anhang-29-ii-1-umzugskosten"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-anhang-29-iv-2-umzugskosten"
+      ],
+      "primary_context_id": "lsth-2025-anhang-29-iv-2-umzugskosten",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "field-bewerbungskosten-zeile",
+      "category": "field_explanation",
+      "search_query": "Bewerbungskosten Anlage N Eintragung Zeile",
+      "filters": {
+        "topics": [
+          "bewerbungskosten",
+          "anlage_n_grundlagen"
+        ],
+        "line": null,
+        "form_id": "anlage_n"
+      },
+      "strategies": [
+        "lexical:Bewerbungs",
+        "lexical:Eintragung",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025"
+      ],
+      "primary_context_id": "055-anleitung-anlage-n-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "know-umzug-dhf-abgrenzung",
+      "category": "knowledge",
+      "search_query": "Umzugskosten doppelte Haushaltsführung Anlage N Abzug",
+      "filters": {
+        "topics": [
+          "doppelte_haushaltsfuehrung",
+          "umzugskosten"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-anhang-29-i-umzugskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-anhang-29-iii-umzugskosten"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025",
+        "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025"
+      ],
+      "primary_context_id": "056-anleitung-anlage-n-doppelte-haushaltsfuehrung-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    },
+    {
+      "id": "ml-en-bewerbung",
+      "category": "multilingual",
+      "search_query": "Bewerbungskosten Werbungskosten Steuerermäßigung Anlage N",
+      "filters": {
+        "topics": [
+          "bewerbungskosten",
+          "anlage_n_grundlagen"
+        ],
+        "line": null,
+        "form_id": null
+      },
+      "strategies": [
+        "lexical:Bewerbungs",
+        "lexical:Steuerermä",
+        "metadata",
+        "semantic"
+      ],
+      "ranked_source_ids": [
+        "055-anleitung-anlage-n-2025",
+        "005-anleitung-hauptvordruck-est1a-2025",
+        "curated-expense-classification",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025",
+        "055-anleitung-anlage-n-2025",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "lsth-2025-par-9-werbungskosten",
+        "055-anleitung-anlage-n-2025"
+      ],
+      "reference_context_ids": [
+        "055-anleitung-anlage-n-2025"
+      ],
+      "primary_context_id": "055-anleitung-anlage-n-2025",
+      "reference_rank": 1,
+      "primary_rank": 1,
+      "candidates": 12
+    }
+  ],
+  "totals": {
+    "5": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    },
+    "6": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    },
+    "7": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    },
+    "8": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    },
+    "10": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    },
+    "12": {
+      "context_hit": 27,
+      "context_hit_of": 27,
+      "primary_context_hit": 16,
+      "primary_context_hit_of": 16
+    }
+  }
+}

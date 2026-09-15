@@ -1,0 +1,81 @@
+{
+  "label": "flake-check",
+  "strategies": [
+    "lexical",
+    "metadata",
+    "semantic"
+  ],
+  "model": "anthropic/claude-haiku-4.5",
+  "k": 5,
+  "cost_usd": 0.008822,
+  "cases": [
+    {
+      "id": "ml-en-commute",
+      "category": "multilingual",
+      "question": "How much can I deduct for commuting to work in 2025?",
+      "reference_answer": "0.30 € per kilometre for the first 20 km and 0.38 € from km 21, capped at 4,500 € per year unless you use your own or a company car.",
+      "reference_context_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "expect": {
+        "intent": "knowledge",
+        "answer_lang": "en",
+        "citation": true
+      },
+      "answer": "I need a few details to calculate your commuting deduction (Entfernungspauschale) for 2025:\n\n1. **One-way distance** from your home to your workplace (in full kilometres)\n2. **Number of work days** you commuted in 2025\n3. **How you travelled**: Did you use your own car, public transport, or a combination?\n4. If you used public transport: What were your **actual yearly ticket costs** (if any)?\n\nOnce you provide these, I can calculate your exact deduction. The basic rate is €0.30 per km for the first 20 km, and €0.38 per km for distances beyond 21 km [lsth-2022-anhang-14-entfernungspauschalen].",
+      "intent": "knowledge",
+      "cited_source_ids": [
+        "lsth-2022-anhang-14-entfernungspauschalen"
+      ],
+      "tools_called": [],
+      "trace": [
+        "Query analysis: intent=knowledge · language=en",
+        "Query rewritten (DE): 'Entfernungspauschale 2025 Höhe Betrag Pendlerpauschale' · filters: topics=['entfernungspauschale'], line=—, form=—",
+        "Retrieval: 5 chunks from 1 documents · metadata, semantic",
+        "Generation: model=anthropic/claude-haiku-4.5 · 180 tokens out",
+        "Citations: 1 sources cited inline · 1 shown"
+      ],
+      "warnings": [],
+      "usage": {
+        "prompt_tokens": 7622,
+        "completion_tokens": 240,
+        "total_tokens": 7862,
+        "llm_calls": 2,
+        "model": "anthropic/claude-haiku-4.5",
+        "cost_usd": 0.008822
+      },
+      "retrieved": [
+        {
+          "source_id": "lsth-2022-anhang-14-entfernungspauschalen",
+          "section": "LStH 2022 - Anhang 14 – Entfernungspauschalen",
+          "distance": 0.2796,
+          "text": "Entfernungskilometer eine erhöhte Entfernungspauschale von 0,35 € und\nab 2024 von 0,38 €. Für die Entfernungen bis zu 20 km ist unverändert ein Entfernungspauschale von 0,30 € zu\nberücksichtigen. 8\nFür die Jahre 2021 bis 2023 ist die anzusetzende Entfernungspauschale in Fällen, in denen die Entfernung mindestens\n21 Kilometer beträgt, somit wie folgt zu berechnen: Zahl der Arbeitstage x 20 Entfernungskilometer x 0,30 € zuzüglich\nZahl der Arbeitstage x restliche Entfernungskilometer x 0,35 €. 9\nFür die Jahre 2024 bis 2026 ist in diesen Fällen die anzusetzende Entfernungspauschale somit wie folgt zu berechnen: Zahl der Arbeitstage x 20 Entfernungskilometer x 0,30 € zuzüglich\nZahl der Arbeitstage x restliche Entfernungskilometer x 0,38 €. Beispiel 2: Ein Arbeitnehmer benutzt von Januar bis September 2021 (an 165 Arbeitstagen) für die Wege von seiner Wohnung zur\n80 km entfernten ersten Tätigkeitsstätte und zurück den eigenen Kraftwagen. Dann verlegt er seinen Wohnsitz. Von\nder neuen Wohnung aus gelangt er ab Oktober (an 55 Arbeitstagen) zur nunmehr nur noch 5 km entfernten ersten"
+        },
+        {
+          "source_id": "lsth-2022-anhang-14-entfernungspauschalen",
+          "section": "LStH 2022 - Anhang 14 – Entfernungspauschalen",
+          "distance": 0.3351,
+          "text": "22\nIn den Kalenderjahren 2021 bis 2026 ist zu berücksichtigen\ndie erhöhte Entfernungspauschale ab dem 21. Entfernungskilometer vorrangig bei der Teilstrecke, die mit\neinem eigenen oder zur Nutzung überlassenen Kraftwagen zurückgelegt wird, da für diese der Höchstbetrag von\n4.500 € nicht gilt und\ndie Entfernungspauschale von 0,30 € für die ersten 20 km vorrangig bei der Teilstrecke der öffentlichen\nVerkehrsmittel. Beispiel 6: Ein Arbeitnehmer fährt an 220 Arbeitstagen im Jahr 2021 mit dem eigenen Kraftwagen 30 km zur nächsten\nBahnstation und von dort 100 km mit der Bahn zur ersten Tätigkeitsstätte. Die kürzeste maßgebende Entfernung\n(Straßenverbindung) beträgt 100 km. Die Aufwendungen für die Bahnfahrten betragen 2.160 € (monatlich 180 € x 12)\nim Jahr. Von der maßgebenden Entfernung von 100 km entfällt eine Teilstrecke von 30 km auf Fahrten mit dem eigenen\nKraftwagen und eine Teilstrecke von 70 km auf Fahrten mit der Bahn. Für die Teilstrecke mit der Bahn (100 km – 30 km) errechnet sich eine Entfernungspauschale von 220 Arbeitstagen x\n20 km x 0,30 € = 1.320 € zuzüglich 220 Arbeitstage x 50 km x 0,35 € = 3.850 €; in der Summe 5.170 €. Hierfür ist der Höchstbetrag von 4.500 € anzusetzen."
+        },
+        {
+          "source_id": "lsth-2022-anhang-14-entfernungspauschalen",
+          "section": "LStH 2022 - Anhang 14 – Entfernungspauschalen",
+          "distance": 0.3514,
+          "text": "22 Beispiel 9). 1.5 Fahrgemeinschaften\n16\nUnabhängig von der Art der Fahrgemeinschaft ist bei jedem Teilnehmer der Fahrgemeinschaft die\nEntfernungspauschale entsprechend der für ihn maßgebenden Entfernungsstrecke anzusetzen. Umwegstrecken,\ninsbesondere zum Abholen von Mitfahrern, sind jedoch nicht in die Entfernungsermittlung einzubeziehen. 17\nDer Höchstbetrag für die Entfernungspauschale von 4.500 € greift auch bei einer wechselseitigen Fahrgemeinschaft,\nund zwar für die Mitfahrer der Fahrgemeinschaft an den Arbeitstagen, an denen sie ihren eigenen oder zur Nutzung\nüberlassenen Kraftwagen nicht einsetzen. 18\nBei wechselseitigen Fahrgemeinschaften kann der Höchstbetrag von 4.500 € zunächst durch die Wege an den\nArbeitstagen ausgeschöpft werden, an denen der Arbeitnehmer mitgenommen wurde. Deshalb ist zunächst die (auf\n4.500 € begrenzte) anzusetzende Entfernungspauschale für diese Tage zu berechnen. Anschließend ist die\nanzusetzende (unbegrenzte) Entfernungspauschale für die Tage zu ermitteln, an denen der Arbeitnehmer seinen\neigenen Kraftwagen benutzt hat. Beide Beträge zusammen ergeben die insgesamt anzusetzende Entfernungspauschale. Beispiel 5:\n\nBei einer aus drei Arbeitnehmern bestehenden wechselseitigen Fahrgemeinschaft beträgt die Entfernung zwischen\nWohnung und erster Tätigkeitsstätte für jeden Arbeitnehmer im Kalenderjahr 2021 90 km. Bei tatsächlichen 210\nArbeitstagen benutzt jeder Arbeitnehmer seinen eigenen Kraftwagen an 70 Tagen für die Fahrten zwischen Wohnung\nund erster Tätigkeitsstätte. Die Entfernungspauschale ist für jeden Teilnehmer der Fahrgemeinschaft wie folgt zu ermitteln: Zunächst ist die Entfernungspauschale für die Fahrten und Tage zu ermitteln, an denen der Arbeitnehmer\nmitgenommen wurde: 140 Arbeitstage x 20 km x 0,30 €\n140 Arbeitstage x 70 km x 0,35 €\n=    840 €\n= 3.430 €\n(Höchstbetrag von 4.500 Euro ist nicht überschritten)\n   4.270 €\nAnschließend ist die Entfernungspauschale für die Fahrten und Tage zu ermitteln, an denen der Arbeitnehmer seinen\neigenen Kraftwagen benutzt hat:"
+        },
+        {
+          "source_id": "lsth-2022-anhang-14-entfernungspauschalen",
+          "section": "LStH 2022 - Anhang 14 – Entfernungspauschalen",
+          "distance": 0.3518,
+          "text": "3\nAusgenommen von der Entfernungspauschale sind Flugstrecken und Strecken mit steuerfreier Sammelbeförderung. 4\nFür Flugstrecken sind die tatsächlichen Aufwendungen anzusetzen (BFH vom 26. März 2009, VI R 42/07, BStBl II\nSeite 724). Die Entfernungspauschale gilt bei der Nutzung von Flugzeugen nur für die An- und Abfahrten zu und von\nFlughäfen. Bei verbilligter Sammelbeförderung durch den Arbeitgeber nach § 3 Nummer 32 EStG sind die vom\nArbeitnehmer getragenen Aufwendungen ebenso als Werbungskosten anzusetzen. 5\nFür Fahrten zwischen Wohnung und einem sog. „Sammelpunkt“ oder Wohnung und dem nächstgelegenen Zugang\neines „weiträumigen Tätigkeitsgebiets“ gelten die Regelungen der Entfernungspauschale entsprechend. Zu den\nVoraussetzungen und der Anwendung des § 9 Absatz 1 Satz 3 Nummer 4a Satz 3 EStG im Einzelnen sind die Rz. 38 bis\n46 des BMF-Schreibens zur Reform des steuerlichen Reisekostenrechts vom 25. November 2020, BStBl I Seite 1228 zu\nbeachten. 1.2 Höhe der Entfernungspauschale\n6\nDie Entfernungspauschale beträgt 0,30 € für jeden vollen Entfernungskilometer zwischen Wohnung und erster\nTätigkeitsstätte. 7\nFür die Jahre 2021 bis 2026 gilt ab dem 21."
+        },
+        {
+          "source_id": "lsth-2022-anhang-14-entfernungspauschalen",
+          "section": "LStH 2022 - Anhang 14 – Entfernungspauschalen",
+          "distance": 0.3596,
+          "text": "LStH 2022 > B. Anhänge >\nAnhang 14 Entfernungspauschalen; Gesetz zur Umsetzung des Klimaschutzprogramms 2030 im Steu‐\nerrecht vom Dezember 2019 (BGBl.I Seite 2886) sowie Gesetz zur weiteren steuerlichen Förderung\nder Elektromobilität und zur Änderung weiterer steuerlicher Vorschriften vom 12. Dezember 2019\n(BGBl. I 2019 Seite 2451) BMF vom 18.11.2021 (BStBl I S. 2315)\nEntfernungspauschalen;\nGesetz zur Umsetzung des Klimaschutzprogramms 2030 im Steuerrecht\nvom 21. Dezember 2019 (BGBl. I Seite 2886) sowie Gesetz zur weiteren\nsteuerlichen Förderung der Elektromobilität und zur Änderung weiterer\nsteuerlicher Vorschriften vom 12. Dezember 2019 (BGBl. I 2019 Seite\n2451)\nBMF vom 18.11.2021 (BStBl I S. 2315)\nIV C 5 – S 2351/20/10001 :002 – 2021/1203982\nInhaltsverzeichnis\n\n1. Entfernungspauschale für die Wege zwischen Wohnung und erster Tätigkeitsstätte (§ 9 Absatz 1 Satz 3\nNummer 4 und Absatz 2 EStG) oder für Fahrten nach § 9 Absatz 1 Satz 3 Nummer 4a Satz 3 EStG\n1.1 Allgemeines\n1.2 Höhe der Entfernungspauschale\n1.3 Höchstbetrag von 4.500 €\n1.4 Maßgebende Entfernung zwischen Wohnung und erster Tätigkeitsstätte\n1.5 Fahrgemeinschaften\n1.6 Benutzung verschiedener Verkehrsmittel\n1.7 Mehrere Wege an einem Arbeitstag\n1.8 Mehrere Dienstverhältnisse\n1.9 Anrechnung von Arbeitgeberleistungen auf die Entfernungspauschale\n2. Entfernungspauschale für Familienheimfahrten bei doppelter Haushaltsführung (§ 9 Absatz 1 Satz 3 Nummer\n5 EStG)\n3. Menschen mit Behinderungen\n4. Abgeltungswirkung der Entfernungspauschalen\n5. Pauschalbesteuerung nach § 40 Absatz 2 EStG in der ab 1."
+        }
+      ]
+    }
+  ]
+}

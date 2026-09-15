@@ -1,0 +1,603 @@
+{
+  "prompt": "Du liest ein deutsches Steuerdokument (Lohnsteuerbescheinigung, Rechnung\noder Gehaltsabrechnung) und überträgst seinen Inhalt in das vorgegebene JSON-Schema.\n\nRegeln:\n- Übertrage ausschließlich, was im Dokument steht. Rechne nichts um und schätze nichts.\n- Beträge als Zahl in Euro, Punkt als Dezimaltrennzeichen: aus \"41.238,76\" wird 41238.76.\n- Datumsangaben im Format JJJJ-MM-TT.\n- Felder, die im Dokument nicht vorkommen oder nicht lesbar sind, setze auf null.\n- Ordne jeden Betrag der Zeile zu, in der er steht. Verschiebe keinen Betrag in eine\n  Nachbarzeile, auch wenn das Dokument schief oder unscharf ist.\n- Gib für jedes ausgefüllte Feld in \"confidence\" an, wie sicher du dir bist.\n\nAntworte nur mit dem JSON-Objekt.",
+  "schemas": {
+    "lohnsteuerbescheinigung.jpg": {
+      "name": "lohnsteuerbescheinigung",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "document_type",
+          "tax_year",
+          "employer_name",
+          "employee_name",
+          "employment_period_start",
+          "employment_period_end",
+          "tax_class",
+          "etin",
+          "gross_salary_eur",
+          "income_tax_eur",
+          "solidarity_surcharge_eur",
+          "church_tax_eur",
+          "pension_insurance_employee_eur",
+          "health_insurance_employee_eur",
+          "care_insurance_employee_eur",
+          "unemployment_insurance_eur",
+          "confidence"
+        ],
+        "properties": {
+          "document_type": {
+            "type": "string",
+            "enum": [
+              "lohnsteuerbescheinigung",
+              "gehaltsabrechnung",
+              "unbekannt"
+            ]
+          },
+          "tax_year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "employer_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employee_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employment_period_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employment_period_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tax_class": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "etin": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gross_salary_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "income_tax_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "solidarity_surcharge_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "church_tax_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "pension_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "health_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "care_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unemployment_insurance_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    },
+    "payslip-degraded.jpg": {
+      "name": "lohnsteuerbescheinigung",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "document_type",
+          "tax_year",
+          "employer_name",
+          "employee_name",
+          "employment_period_start",
+          "employment_period_end",
+          "tax_class",
+          "etin",
+          "gross_salary_eur",
+          "income_tax_eur",
+          "solidarity_surcharge_eur",
+          "church_tax_eur",
+          "pension_insurance_employee_eur",
+          "health_insurance_employee_eur",
+          "care_insurance_employee_eur",
+          "unemployment_insurance_eur",
+          "confidence"
+        ],
+        "properties": {
+          "document_type": {
+            "type": "string",
+            "enum": [
+              "lohnsteuerbescheinigung",
+              "gehaltsabrechnung",
+              "unbekannt"
+            ]
+          },
+          "tax_year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "employer_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employee_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employment_period_start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "employment_period_end": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tax_class": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "etin": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "gross_salary_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "income_tax_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "solidarity_surcharge_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "church_tax_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "pension_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "health_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "care_insurance_employee_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "unemployment_insurance_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    },
+    "rechnung-foto.jpg": {
+      "name": "rechnung",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "document_type",
+          "invoice_number",
+          "invoice_date",
+          "supplier_name",
+          "customer_name",
+          "net_total_eur",
+          "vat_rate_percent",
+          "vat_amount_eur",
+          "gross_total_eur",
+          "line_items",
+          "confidence"
+        ],
+        "properties": {
+          "document_type": {
+            "type": "string",
+            "enum": [
+              "rechnung",
+              "unbekannt"
+            ]
+          },
+          "invoice_number": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "invoice_date": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "supplier_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "customer_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "net_total_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "vat_rate_percent": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "vat_amount_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "gross_total_eur": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "line_items": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "description",
+                "quantity",
+                "unit_price_eur"
+              ],
+              "properties": {
+                "description": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "quantity": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "unit_price_eur": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                }
+              }
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "reasoning_effort": "low",
+  "runs_per_document": 3,
+  "models": {
+    "google/gemini-3.7-flash": {
+      "documents": {
+        "lohnsteuerbescheinigung.jpg": {
+          "cost_total": 0.01094925,
+          "cost_per_call": 0.00364975,
+          "prompt_tokens": [
+            1893,
+            1893,
+            1893
+          ],
+          "completion_tokens": [
+            551,
+            543,
+            690
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 16,
+            "detail": {}
+          },
+          "raw": [
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"M\\u00F6belwerkstatt Kr\\u00E4mer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}"
+          ]
+        },
+        "payslip-degraded.jpg": {
+          "cost_total": 0.01055925,
+          "cost_per_call": 0.00351975,
+          "prompt_tokens": [
+            1893,
+            1893,
+            1893
+          ],
+          "completion_tokens": [
+            530,
+            606,
+            544
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 16,
+            "detail": {}
+          },
+          "raw": [
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.00,\"solidarity_surcharge_eur\":0.00,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.20,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.10,\"confidence\":\"high\"}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}"
+          ]
+        },
+        "rechnung-foto.jpg": {
+          "cost_total": 0.0064215,
+          "cost_per_call": 0.0021405,
+          "prompt_tokens": [
+            1799,
+            1799,
+            1799
+          ],
+          "completion_tokens": [
+            213,
+            207,
+            213
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 10,
+            "detail": {}
+          },
+          "raw": [
+            "{\"document_type\":\"rechnung\",\"invoice_number\":\"2025-0417\",\"invoice_date\":\"2025-09-08\",\"supplier_name\":\"Bürotechnik Hoffmann e.K.\",\"customer_name\":\"Anna Beispiel\",\"net_total_eur\":1094.12,\"vat_rate_percent\":19.0,\"vat_amount_eur\":207.88,\"gross_total_eur\":1302.0,\"line_items\":[{\"description\":\"Schreibtisch Modell Ergoline 160 cm\",\"quantity\":1.0,\"unit_price_eur\":689.0},{\"description\":\"Bürostuhl Drehstuhl Aristo, schwarz\",\"quantity\":1.0,\"unit_price_eur\":312.61},{\"description\":\"Monitorarm Duo, Klemmbefestigung\",\"quantity\":2.0,\"unit_price_eur\":46.25}],\"confidence\":\"high\"}",
+            "{\"document_type\":\"rechnung\",\"invoice_number\":\"2025-0417\",\"invoice_date\":\"2025-09-08\",\"supplier_name\":\"Bürotechnik Hoffmann e.K.\",\"customer_name\":\"Anna Beispiel\",\"net_total_eur\":1094.12,\"vat_rate_percent\":19,\"vat_amount_eur\":207.88,\"gross_total_eur\":1302.00,\"line_items\":[{\"description\":\"Schreibtisch Modell Ergoline 160 cm\",\"quantity\":1,\"unit_price_eur\":689.00},{\"description\":\"Bürostuhl Drehstuhl Aristo, schwarz\",\"quantity\":1,\"unit_price_eur\":312.61},{\"description\":\"Monitorarm Duo, Klemmbefestigung\",\"quantity\":2,\"unit_price_eur\":46.25}],\"confidence\":\"high\"}",
+            "{\"document_type\":\"rechnung\",\"invoice_number\":\"2025-0417\",\"invoice_date\":\"2025-09-08\",\"supplier_name\":\"Bürotechnik Hoffmann e.K.\",\"customer_name\":\"Anna Beispiel\",\"net_total_eur\":1094.12,\"vat_rate_percent\":19.0,\"vat_amount_eur\":207.88,\"gross_total_eur\":1302.0,\"line_items\":[{\"description\":\"Schreibtisch Modell Ergoline 160 cm\",\"quantity\":1.0,\"unit_price_eur\":689.0},{\"description\":\"Bürostuhl Drehstuhl Aristo, schwarz\",\"quantity\":1.0,\"unit_price_eur\":312.61},{\"description\":\"Monitorarm Duo, Klemmbefestigung\",\"quantity\":2.0,\"unit_price_eur\":46.25}],\"confidence\":\"high\"}"
+          ]
+        }
+      },
+      "cost": 0.02793
+    },
+    "x-ai/grok-4.5": {
+      "documents": {
+        "lohnsteuerbescheinigung.jpg": {
+          "cost_total": 0.0118228,
+          "cost_per_call": 0.003940933333333333,
+          "prompt_tokens": [
+            2958,
+            2958,
+            2958
+          ],
+          "completion_tokens": [
+            239,
+            239,
+            239
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 16,
+            "detail": {}
+          },
+          "raw": [
+            "{\n  \"document_type\": \"lohnsteuerbescheinigung\",\n  \"tax_year\": 2025,\n  \"employer_name\": \"Möbelwerkstatt Krämer GmbH & Co. KG\",\n  \"employee_name\": \"Anna Beispiel\",\n  \"employment_period_start\": \"2025-01-01\",\n  \"employment_period_end\": \"2025-12-31\",\n  \"tax_class\": 1,\n  \"etin\": \"AB1234567890\",\n  \"gross_salary_eur\": 41238.76,\n  \"income_tax_eur\": 6412.0,\n  \"solidarity_surcharge_eur\": 0.0,\n  \"church_tax_eur\": 615.78,\n  \"pension_insurance_employee_eur\": 3835.2,\n  \"health_insurance_employee_eur\": 3382.58,\n  \"care_insurance_employee_eur\": 710.86,\n  \"unemployment_insurance_eur\": 535.1,\n  \"confidence\": \"high\"\n}",
+            "{\n  \"document_type\": \"lohnsteuerbescheinigung\",\n  \"tax_year\": 2025,\n  \"employer_name\": \"Möbelwerkstatt Krämer GmbH & Co. KG\",\n  \"employee_name\": \"Anna Beispiel\",\n  \"employment_period_start\": \"2025-01-01\",\n  \"employment_period_end\": \"2025-12-31\",\n  \"tax_class\": 1,\n  \"etin\": \"AB1234567890\",\n  \"gross_salary_eur\": 41238.76,\n  \"income_tax_eur\": 6412.00,\n  \"solidarity_surcharge_eur\": 0.00,\n  \"church_tax_eur\": 615.78,\n  \"pension_insurance_employee_eur\": 3835.20,\n  \"health_insurance_employee_eur\": 3382.58,\n  \"care_insurance_employee_eur\": 710.86,\n  \"unemployment_insurance_eur\": 535.10,\n  \"confidence\": \"high\"\n}",
+            "{\n  \"document_type\": \"lohnsteuerbescheinigung\",\n  \"tax_year\": 2025,\n  \"employer_name\": \"Möbelwerkstatt Krämer GmbH & Co. KG\",\n  \"employee_name\": \"Anna Beispiel\",\n  \"employment_period_start\": \"2025-01-01\",\n  \"employment_period_end\": \"2025-12-31\",\n  \"tax_class\": 1,\n  \"etin\": \"AB1234567890\",\n  \"gross_salary_eur\": 41238.76,\n  \"income_tax_eur\": 6412.0,\n  \"solidarity_surcharge_eur\": 0.0,\n  \"church_tax_eur\": 615.78,\n  \"pension_insurance_employee_eur\": 3835.2,\n  \"health_insurance_employee_eur\": 3382.58,\n  \"care_insurance_employee_eur\": 710.86,\n  \"unemployment_insurance_eur\": 535.1,\n  \"confidence\": \"high\"\n}"
+          ]
+        },
+        "payslip-degraded.jpg": {
+          "cost_total": 0.0081088,
+          "cost_per_call": 0.002702933333333333,
+          "prompt_tokens": [
+            1353,
+            1353,
+            1353
+          ],
+          "completion_tokens": [
+            239,
+            188,
+            188
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 16,
+            "detail": {}
+          },
+          "raw": [
+            "{\n  \"document_type\": \"lohnsteuerbescheinigung\",\n  \"tax_year\": 2025,\n  \"employer_name\": \"Möbelwerkstatt Krämer GmbH & Co. KG\",\n  \"employee_name\": \"Anna Beispiel\",\n  \"employment_period_start\": \"2025-01-01\",\n  \"employment_period_end\": \"2025-12-31\",\n  \"tax_class\": 1,\n  \"etin\": \"AB1234567890\",\n  \"gross_salary_eur\": 41238.76,\n  \"income_tax_eur\": 6412.0,\n  \"solidarity_surcharge_eur\": 0.0,\n  \"church_tax_eur\": 615.78,\n  \"pension_insurance_employee_eur\": 3835.2,\n  \"health_insurance_employee_eur\": 3382.58,\n  \"care_insurance_employee_eur\": 710.86,\n  \"unemployment_insurance_eur\": 535.1,\n  \"confidence\": \"high\"\n}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}",
+            "{\"document_type\":\"lohnsteuerbescheinigung\",\"tax_year\":2025,\"employer_name\":\"Möbelwerkstatt Krämer GmbH & Co. KG\",\"employee_name\":\"Anna Beispiel\",\"employment_period_start\":\"2025-01-01\",\"employment_period_end\":\"2025-12-31\",\"tax_class\":1,\"etin\":\"AB1234567890\",\"gross_salary_eur\":41238.76,\"income_tax_eur\":6412.0,\"solidarity_surcharge_eur\":0.0,\"church_tax_eur\":615.78,\"pension_insurance_employee_eur\":3835.2,\"health_insurance_employee_eur\":3382.58,\"care_insurance_employee_eur\":710.86,\"unemployment_insurance_eur\":535.1,\"confidence\":\"high\"}"
+          ]
+        },
+        "rechnung-foto.jpg": {
+          "cost_total": 0.0124256,
+          "cost_per_call": 0.0041418666666666664,
+          "prompt_tokens": [
+            3138,
+            3138,
+            3138
+          ],
+          "completion_tokens": [
+            260,
+            190,
+            260
+          ],
+          "errors": [],
+          "repaired": 0,
+          "parse_errors": 0,
+          "grade": {
+            "unusable": false,
+            "schema_ignored": false,
+            "runs_parsed": 3,
+            "wrong": 0,
+            "caught": 0,
+            "silent": 0,
+            "fields": 10,
+            "detail": {}
+          },
+          "raw": [
+            "{\n  \"document_type\": \"rechnung\",\n  \"invoice_number\": \"2025-0417\",\n  \"invoice_date\": \"2025-09-08\",\n  \"supplier_name\": \"Bürotechnik Hoffmann e.K.\",\n  \"customer_name\": \"Anna Beispiel\",\n  \"net_total_eur\": 1094.12,\n  \"vat_rate_percent\": 19,\n  \"vat_amount_eur\": 207.88,\n  \"gross_total_eur\": 1302.00,\n  \"line_items\": [\n    {\n      \"description\": \"Schreibtisch Modell Ergoline 160 cm\",\n      \"quantity\": 1,\n      \"unit_price_eur\": 689.00\n    },\n    {\n      \"description\": \"Bürostuhl Drehstuhl Aristo, schwarz\",\n      \"quantity\": 1,\n      \"unit_price_eur\": 312.61\n    },\n    {\n      \"description\": \"Monitorarm Duo, Klemmbefestigung\",\n      \"quantity\": 2,\n      \"unit_price_eur\": 46.25\n    }\n  ],\n  \"confidence\": \"high\"\n}",
+            "{\"document_type\":\"rechnung\",\"invoice_number\":\"2025-0417\",\"invoice_date\":\"2025-09-08\",\"supplier_name\":\"Bürotechnik Hoffmann e.K.\",\"customer_name\":\"Anna Beispiel\",\"net_total_eur\":1094.12,\"vat_rate_percent\":19.0,\"vat_amount_eur\":207.88,\"gross_total_eur\":1302.0,\"line_items\":[{\"description\":\"Schreibtisch Modell Ergoline 160 cm\",\"quantity\":1,\"unit_price_eur\":689.0},{\"description\":\"Bürostuhl Drehstuhl Aristo, schwarz\",\"quantity\":1,\"unit_price_eur\":312.61},{\"description\":\"Monitorarm Duo, Klemmbefestigung\",\"quantity\":2,\"unit_price_eur\":46.25}],\"confidence\":\"high\"}",
+            "{\n  \"document_type\": \"rechnung\",\n  \"invoice_number\": \"2025-0417\",\n  \"invoice_date\": \"2025-09-08\",\n  \"supplier_name\": \"Bürotechnik Hoffmann e.K.\",\n  \"customer_name\": \"Anna Beispiel\",\n  \"net_total_eur\": 1094.12,\n  \"vat_rate_percent\": 19,\n  \"vat_amount_eur\": 207.88,\n  \"gross_total_eur\": 1302.0,\n  \"line_items\": [\n    {\n      \"description\": \"Schreibtisch Modell Ergoline 160 cm\",\n      \"quantity\": 1,\n      \"unit_price_eur\": 689.0\n    },\n    {\n      \"description\": \"Bürostuhl Drehstuhl Aristo, schwarz\",\n      \"quantity\": 1,\n      \"unit_price_eur\": 312.61\n    },\n    {\n      \"description\": \"Monitorarm Duo, Klemmbefestigung\",\n      \"quantity\": 2,\n      \"unit_price_eur\": 46.25\n    }\n  ],\n  \"confidence\": \"high\"\n}"
+          ]
+        }
+      },
+      "cost": 0.0323572
+    }
+  },
+  "total_cost": 0.0602872
+}

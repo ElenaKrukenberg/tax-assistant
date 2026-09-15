@@ -1,0 +1,235 @@
+{
+  "label": "lexical-cap-31",
+  "judge": "openai/gpt-4o",
+  "embeddings": "openai/text-embedding-3-small",
+  "skipped": [
+    "oos-cooking",
+    "oos-kapitalertraege",
+    "inj-ignore-instructions",
+    "inj-system-prompt"
+  ],
+  "means": {
+    "faithfulness": 0.6563478702367591,
+    "answer_relevancy": 0.5834209417244286,
+    "context_precision": 0.7923353908950561,
+    "context_recall": 0.7222222222222222
+  },
+  "rows": [
+    {
+      "id": "know-entfernungspauschale-rate",
+      "category": "knowledge",
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.6110666946156924,
+      "context_precision": 0.99999999995,
+      "context_recall": 0.5
+    },
+    {
+      "id": "know-homeoffice-pauschale",
+      "category": "knowledge",
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.6090598167951068,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-arbeitsmittel-gwg",
+      "category": "knowledge",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.6779017574742444,
+      "context_precision": 0.9166666666361111,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-pauschbetrag",
+      "category": "knowledge",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8520755965196176,
+      "context_precision": 0.32499999998375,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-berufsverbaende",
+      "category": "knowledge",
+      "faithfulness": 0.9090909090909091,
+      "answer_relevancy": 0.9217886954800751,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-telefon-internet",
+      "category": "knowledge",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6356971598365563,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-verpflegungsmehraufwand",
+      "category": "knowledge",
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "id": "know-dhf-miete",
+      "category": "knowledge",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8941280124375132,
+      "context_precision": 0.4499999999775,
+      "context_recall": 1.0
+    },
+    {
+      "id": "field-zeile-31",
+      "category": "field_explanation",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.249999999975,
+      "context_recall": 0.0
+    },
+    {
+      "id": "field-zeile-53",
+      "category": "field_explanation",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5213943534665183,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "field-lohnsteuerbescheinigung",
+      "category": "field_explanation",
+      "faithfulness": 0.9166666666666666,
+      "answer_relevancy": 0.8975923130607749,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-commute-220-25",
+      "category": "calculation",
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.5045582403460641,
+      "context_precision": 0.7499999999625,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-homeoffice-150",
+      "category": "calculation",
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.5870570128552314,
+      "context_precision": 0.6388888888675925,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-arbeitsmittel-afa",
+      "category": "calculation",
+      "faithfulness": 0.14285714285714285,
+      "answer_relevancy": 0.5906541323357076,
+      "context_precision": 0.999999999975,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-pauschbetrag-vergleich",
+      "category": "calculation",
+      "faithfulness": 0.25,
+      "answer_relevancy": 0.46080848819197595,
+      "context_precision": 0.4499999999775,
+      "context_recall": 0.5
+    },
+    {
+      "id": "clarify-missing-inputs",
+      "category": "insufficient_data",
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.37210825908038475,
+      "context_precision": 0.32499999998375,
+      "context_recall": 0.5
+    },
+    {
+      "id": "clarify-vage-arbeitsmittel",
+      "category": "insufficient_data",
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 0.3959886399706843,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.0
+    },
+    {
+      "id": "multiturn-distance-after-days",
+      "category": "multi_turn",
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.23477296444770598,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.0
+    },
+    {
+      "id": "multiturn-followup-cap",
+      "category": "multi_turn",
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.4934367742741238,
+      "context_precision": 0.5333333333155555,
+      "context_recall": 0.0
+    },
+    {
+      "id": "ambiguous-arbeitszimmer",
+      "category": "ambiguous",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.69299593874126,
+      "context_precision": 0.99999999998,
+      "context_recall": 0.0
+    },
+    {
+      "id": "ml-ru-homeoffice",
+      "category": "multilingual",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.5452044243461475,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    },
+    {
+      "id": "ml-en-commute",
+      "category": "multilingual",
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.7779571438630741,
+      "context_precision": 0.8666666666377778,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-bewerbungskosten",
+      "category": "knowledge",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.9454768474385946,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-umzugskosten-voraussetzung",
+      "category": "knowledge",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "field-bewerbungskosten-zeile",
+      "category": "field_explanation",
+      "faithfulness": 0.8,
+      "answer_relevancy": 0.766371486061109,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-umzug-dhf-abgrenzung",
+      "category": "knowledge",
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.7761675470296144,
+      "context_precision": 0.8874999999778125,
+      "context_recall": 1.0
+    },
+    {
+      "id": "ml-en-bewerbung",
+      "category": "multilingual",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9881031278917949,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  ]
+}

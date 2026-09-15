@@ -1,0 +1,84 @@
+{
+  "lohnsteuerbescheinigung.jpg": {
+    "document_type": "lohnsteuerbescheinigung",
+    "tax_year": 2025,
+    "employer_name": "Möbelwerkstatt Krämer GmbH & Co. KG",
+    "employee_name": "Anna Beispiel",
+    "employment_period_start": "2025-01-01",
+    "employment_period_end": "2025-12-31",
+    "tax_class": 1,
+    "etin": "AB1234567890",
+    "gross_salary_eur": 41238.76,
+    "income_tax_eur": 6412.0,
+    "solidarity_surcharge_eur": 0.0,
+    "church_tax_eur": 615.78,
+    "pension_insurance_employee_eur": 3835.2,
+    "health_insurance_employee_eur": 3382.58,
+    "care_insurance_employee_eur": 710.86,
+    "unemployment_insurance_eur": 535.1
+  },
+  "rechnung-foto.jpg": {
+    "document_type": "rechnung",
+    "invoice_number": "2025-0417",
+    "invoice_date": "2025-09-08",
+    "supplier_name": "Bürotechnik Hoffmann e.K.",
+    "customer_name": "Anna Beispiel",
+    "net_total_eur": 1094.12,
+    "vat_rate_percent": 19.0,
+    "vat_amount_eur": 207.88,
+    "gross_total_eur": 1302.0,
+    "line_items": [
+      {
+        "description": "Schreibtisch Modell Ergoline 160 cm",
+        "quantity": 1,
+        "unit_price_eur": 689.0
+      },
+      {
+        "description": "Bürostuhl Drehstuhl Aristo, schwarz",
+        "quantity": 1,
+        "unit_price_eur": 312.61
+      },
+      {
+        "description": "Monitorarm Duo, Klemmbefestigung",
+        "quantity": 2,
+        "unit_price_eur": 46.25
+      }
+    ]
+  },
+  "payslip-degraded.jpg": {
+    "document_type": "lohnsteuerbescheinigung",
+    "tax_year": 2025,
+    "employer_name": "Möbelwerkstatt Krämer GmbH & Co. KG",
+    "employee_name": "Anna Beispiel",
+    "employment_period_start": "2025-01-01",
+    "employment_period_end": "2025-12-31",
+    "tax_class": 1,
+    "etin": "AB1234567890",
+    "gross_salary_eur": 41238.76,
+    "income_tax_eur": 6412.0,
+    "solidarity_surcharge_eur": 0.0,
+    "church_tax_eur": 615.78,
+    "pension_insurance_employee_eur": 3835.2,
+    "health_insurance_employee_eur": 3382.58,
+    "care_insurance_employee_eur": 710.86,
+    "unemployment_insurance_eur": 535.1
+  },
+  "payslip-part-year.jpg": {
+    "document_type": "lohnsteuerbescheinigung",
+    "tax_year": 2025,
+    "employer_name": "Möbelwerkstatt Krämer GmbH & Co. KG",
+    "employee_name": "Anna Beispiel",
+    "employment_period_start": "2025-02-01",
+    "employment_period_end": "2025-09-30",
+    "tax_class": 1,
+    "etin": "AB1234567890",
+    "gross_salary_eur": 41238.76,
+    "income_tax_eur": 6412.0,
+    "solidarity_surcharge_eur": 0.0,
+    "church_tax_eur": 615.78,
+    "pension_insurance_employee_eur": 3835.2,
+    "health_insurance_employee_eur": 3382.58,
+    "care_insurance_employee_eur": 710.86,
+    "unemployment_insurance_eur": 535.1
+  }
+}

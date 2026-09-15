@@ -1,0 +1,26 @@
+# Not a package definition and not a dependency list. The backend is deployed and
+# developed the same way - `pip install -r requirements.txt` into a plain venv, by
+# scripts/setup.sh locally and by render.yaml's build command - so the pinned
+# requirements files are the only place a version is written:
+#
+#   requirements.txt          the application, installed everywhere including Render
+#   requirements-dev.txt      pytest and anything else only a developer runs
+#   eval/requirements-eval.txt  RAGAS, deliberately in its own venv - see that file
+#
+# This file used to carry a [tool.poetry] block as well, declaring a second set of
+# versions that nothing ever installed: no poetry.lock, no poetry in setup.sh or
+# render.yaml, and by the end it named chromadb 0.5 against the 1.5.9 actually in use
+# and omitted openai, pypdf, reportlab and langsmith entirely. Which versions you got
+# depended on how the environment was built, which is why it is gone (#41). What stays
+# is the pytest configuration, because pytest reads it from here.
+
+[tool.pytest.ini_options]
+# Integration tests talk to the real Supabase project: they need network and the
+# credentials in .env, and they are the only way to check the row level security
+# policies, the read-only trigger and the database's own constraints. Excluded by
+# default so `pytest` stays fast and works offline; run them with
+#   pytest -m integration
+addopts = "-m 'not integration'"
+markers = [
+    "integration: talks to the real database (needs DATABASE_URL and TEST_USER_ID)",
+]

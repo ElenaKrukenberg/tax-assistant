@@ -1,0 +1,76 @@
+{
+  "tax_year": 2025,
+  "source_pdf": "Anlage_N_2025.pdf",
+  "boxes": {
+    "29": {
+      "page": 1,
+      "kind": "integer",
+      "baseline_y": 543.1,
+      "right_x": 510.9,
+      "left_x": 477.2
+    },
+    "30": {
+      "page": 1,
+      "kind": "km",
+      "baseline_y": 522.8,
+      "right_x": 510.9,
+      "left_x": 477.2
+    },
+    "31": {
+      "page": 1,
+      "kind": "km",
+      "baseline_y": 502.5,
+      "right_x": 510.9,
+      "left_x": 477.2
+    },
+    "33": {
+      "page": 1,
+      "kind": "km",
+      "baseline_y": 461.2,
+      "right_x": 511.5,
+      "left_x": 478.1
+    },
+    "34": {
+      "page": 1,
+      "kind": "eur",
+      "baseline_y": 433.5,
+      "right_x": 517.4,
+      "left_x": 467.5
+    },
+    "56": {
+      "page": 2,
+      "kind": "eur",
+      "baseline_y": 396.8,
+      "right_x": 539.9,
+      "left_x": 475.8
+    },
+    "58": {
+      "page": 2,
+      "kind": "integer",
+      "baseline_y": 237.0,
+      "right_x": 519.2,
+      "left_x": 485.5
+    },
+    "59": {
+      "page": 2,
+      "kind": "integer",
+      "baseline_y": 199.5,
+      "right_x": 519.2,
+      "left_x": 485.5
+    },
+    "60": {
+      "page": 2,
+      "kind": "eur",
+      "baseline_y": 145.5,
+      "right_x": 541.4,
+      "left_x": 477.2
+    },
+    "64": {
+      "page": 3,
+      "kind": "eur",
+      "baseline_y": 693.8,
+      "right_x": 517.7,
+      "left_x": 439.1
+    }
+  }
+}

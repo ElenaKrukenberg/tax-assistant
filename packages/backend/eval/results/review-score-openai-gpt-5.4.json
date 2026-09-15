@@ -1,0 +1,71 @@
+{
+  "model": "openai/gpt-5.4",
+  "cost_usd": null,
+  "cases": [
+    {
+      "case": "broken-1-unbacked-and-contradictory",
+      "from_model": true,
+      "rounds": 2,
+      "seconds": 5.01,
+      "defects": [
+        {
+          "id": "unbacked-expense",
+          "description": "The 1,400 EUR laptop has no document behind it",
+          "caught": true
+        },
+        {
+          "id": "contradictory-days",
+          "description": "88 commuting + 180 home-office days exceed 220 days worked (V02)",
+          "caught": true
+        }
+      ],
+      "findings": [
+        {
+          "severity": "blocking",
+          "title": "Home office and commute days are counted inconsistently",
+          "reasoning": "The recomputation matches the claimed amounts individually, but the case fails validation rule V02: 180 home-office days plus 88 commuting days equals 268 days, which exceeds the stated 220 total working days. The same day cannot generate both the Homeoffice-Pauschale and the Entfernungspauschale.",
+          "category": null
+        },
+        {
+          "severity": "warning",
+          "title": "No document for claimed work equipment expense",
+          "reasoning": "The claimed Arbeitsmittel amount of 1,400.00 EUR recomputes correctly, but there is no supporting document in the case. For an expense of this size, the Finanzamt may request proof of purchase that is not currently available.",
+          "category": "arbeitsmittel"
+        },
+        {
+          "severity": "suggestion",
+          "title": "Check that the commuting distance entered is one-way",
+          "reasoning": "The distance allowance recomputation matched 475.20 EUR, but the calculator warns that the entered 18 km must be the one-way distance, not the round trip distance.",
+          "category": "entfernungspauschale"
+        }
+      ]
+    },
+    {
+      "case": "broken-2-inflated-claim",
+      "from_model": true,
+      "rounds": 3,
+      "seconds": 5.1,
+      "defects": [
+        {
+          "id": "inflated-claim",
+          "description": "Entfernungspauschale claimed at 4,100 EUR; the values give 3,073.04",
+          "caught": true
+        }
+      ],
+      "findings": [
+        {
+          "severity": "blocking",
+          "title": "Entfernungspauschale claimed amount does not match recomputation",
+          "reasoning": "The claimed Entfernungspauschale is 4,100.00 EUR, but recomputation yields 3,073.04 EUR based on 214 commuting days and 42 km one-way distance: 214 × (20 km × 0.30 EUR + 22 km × 0.38 EUR) = 3,073.04 EUR. This is a mismatch of 1,026.96 EUR.",
+          "category": "entfernungspauschale"
+        },
+        {
+          "severity": "suggestion",
+          "title": "Check whether the entered commuting distance is one-way",
+          "reasoning": "The recomputation returned rule warning V21: distance_km must be the one-way distance, not the round trip. If 42 km was entered as a round-trip distance, the claim would be overstated further.",
+          "category": "entfernungspauschale"
+        }
+      ]
+    }
+  ]
+}

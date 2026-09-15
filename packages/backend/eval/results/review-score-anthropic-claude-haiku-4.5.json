@@ -1,0 +1,59 @@
+{
+  "model": "anthropic/claude-haiku-4.5",
+  "cost_usd": 0.016684,
+  "cases": [
+    {
+      "case": "broken-1-unbacked-and-contradictory",
+      "from_model": true,
+      "rounds": 3,
+      "seconds": 9.05,
+      "defects": [
+        {
+          "id": "unbacked-expense",
+          "description": "The 1,400 EUR laptop has no document behind it",
+          "caught": true
+        },
+        {
+          "id": "contradictory-days",
+          "description": "88 commuting + 180 home-office days exceed 220 days worked (V02)",
+          "caught": true
+        }
+      ],
+      "findings": [
+        {
+          "severity": "blocking",
+          "title": "Homeoffice and commute days exceed total working days",
+          "reasoning": "Homeoffice days (180) + commuting days (88) = 268 days, which exceeds the total working days (220). The same day cannot be counted twice. Rule V02 and V22 prohibit claiming both homeoffice and commute expenses for the same day. This is a fundamental logical contradiction that makes the case internally inconsistent.",
+          "category": null
+        },
+        {
+          "severity": "warning",
+          "title": "Arbeitsmittel expense lacks documentation",
+          "reasoning": "The arbeitsmittel claim of 1400.00 EUR has no backing document. For an expense of this magnitude, the Finanzamt will likely request proof of purchase (invoice, receipt). Without documentation, this expense is at risk of disallowance.",
+          "category": "arbeitsmittel"
+        }
+      ]
+    },
+    {
+      "case": "broken-2-inflated-claim",
+      "from_model": true,
+      "rounds": 2,
+      "seconds": 6.29,
+      "defects": [
+        {
+          "id": "inflated-claim",
+          "description": "Entfernungspauschale claimed at 4,100 EUR; the values give 3,073.04",
+          "caught": true
+        }
+      ],
+      "findings": [
+        {
+          "severity": "blocking",
+          "title": "Entfernungspauschale amount does not match recomputation",
+          "reasoning": "The claimed amount of 4,100.00 EUR exceeds the correctly computed amount of 3,073.04 EUR by 1,026.96 EUR. Using 214 commuting days, 42 km one-way distance, and the mixed-mode calculation (20 km × €0.30 + 22 km × €0.38 per day), the correct deduction is 3,073.04 EUR. The overstatement must be corrected before the case can be filed.",
+          "category": null
+        }
+      ]
+    }
+  ]
+}

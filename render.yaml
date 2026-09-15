@@ -1,0 +1,126 @@
+# Render blueprint for the FastAPI backend. The frontend goes to Vercel separately.
+# See "Deployment" in ../README.md for how to create a service from this file, the
+# env-var wiring between the two hosts, and the order they have to be set in.
+#
+# The running service predates this file — it was created by hand — and was later
+# associated with it from the Render dashboard, which Render allows for an existing
+# service. So nothing had to be recreated and the hostname stayed. From that point on
+# every variable declared with a value: below is blueprint-owned: change it here, not
+# in the dashboard, or the next sync resets it.
+services:
+  - type: web
+    name: tax-assistant-api
+    runtime: python
+    rootDir: packages/backend
+    plan: free
+    # Frankfurt, not Render's Oregon default: the users are in Germany, and a
+    # transatlantic round trip adds well over 100 ms to every request. This is what
+    # the hand-created service already runs in, so declaring it is not a change —
+    # it stops a blueprint instance from silently landing in Oregon instead. Region
+    # is fixed when a service is created and cannot be altered afterwards, which is
+    # why it has to be right here rather than corrected later.
+    region: frankfurt
+    # Explicit so the deploy does not follow a change of default branch.
+    branch: main
+    # Only redeploy when something the backend actually depends on changes. rootDir
+    # sets the working directory but does not filter deploy triggers, so without
+    # this every frontend push re-ran the whole build command below — pip install
+    # plus a full re-embedding of KB/ — and on the free plan that means downtime
+    # for a change the API never sees. Paths are relative to the repo root even
+    # though rootDir is set, and KB/ has to be here because ingest.py reads it from
+    # the repo root (../../KB), outside rootDir. Anything the backend starts
+    # depending on outside packages/backend must be added, or its changes will
+    # silently not deploy.
+    buildFilter:
+      paths:
+        - packages/backend/**
+        - render.yaml
+    # `KB/**` is deliberately not here any more. Changing a document no longer has
+    # anything to do with a backend deploy: the knowledge base lives in Postgres and
+    # is loaded by hand with `python ingest.py`, on its own schedule (issue #32).
+    # The files stay in this repository - only the build step left.
+    #
+    # And the build no longer embeds anything. It used to run `ingest.py --reset`,
+    # rebuilding all 775 embeddings on every deploy into an ~18 MB Chroma store on
+    # the instance's own disk. Three things were wrong with that and the third is the
+    # one that mattered: deploys were slow, the store did not outlive the deploy that
+    # built it, and a failure while indexing took down a backend that was otherwise
+    # healthy. A knowledge base can now be built, checked, switched on or rolled back
+    # without rebuilding the backend at all.
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/tax/health
+    envVars:
+      # Pin the interpreter: without this Render picks its current default (3.14
+      # as of this deploy), which has no prebuilt pydantic-core wheel for
+      # pydantic 2.5.0 — pip then tries to compile it with maturin and the build
+      # fails. 3.12 is what we develop against and has cp312 wheels for the whole
+      # dependency set. Bump only together with the pins in requirements.txt.
+      - key: PYTHON_VERSION
+        value: "3.12.13"
+      - key: OPENROUTER_API_KEY
+        sync: false          # set in the Render dashboard, never in the repo
+      - key: LLM_MODEL
+        value: anthropic/claude-haiku-4.5
+      - key: EMBEDDING_MODEL
+        value: openai/text-embedding-3-small
+      # CHROMA_PATH intentionally unset — the ./data/chroma default keeps the
+      # store inside rootDir, where the build wrote it.
+      # The deployed frontend's origin. Declared here rather than in the dashboard
+      # so a blueprint sync cannot reset it (only OPENROUTER_API_KEY is dashboard-
+      # owned, via sync: false) — it is a public URL, not a secret. Matched exactly
+      # by CORSMiddleware, so no trailing slash, and Vercel preview deployments get
+      # their own domains: add them here, comma-separated, if they need API access.
+      - key: CORS_EXTRA_ORIGINS
+        value: "https://tax-assistant-app.vercel.app"
+      # Dashboard-owned so it can be flipped without a commit: true turns on the
+      # developer panel (the live agent graph) for the review, off again after.
+      # A blueprint-pinned value would silently revert the dashboard toggle on
+      # every sync, which is exactly how it was declared before.
+      - key: DEBUG
+        sync: false
+      # Every request arrives from Render's load balancer, so without this the
+      # per-IP limit would count the whole internet in one bucket. The rightmost
+      # X-Forwarded-For entry is used — see the comment in core/rate_limit.py for
+      # why that is the spoof-resistant end of the header.
+      - key: TRUST_PROXY_HEADER
+        value: "true"
+      # An interview is ~16 quick requests from one client; the default 10/minute
+      # per-IP limit cuts it off mid-way. The real money guards are the per-user
+      # and monthly quotas in db/usage.py.
+      - key: RATE_LIMIT_PER_IP
+        value: "60"
+      # --- Supabase: the Tax Case workspace (ADR 0003, db/README.md) ---
+      # All four dashboard-owned. DATABASE_URL must be the *session pooler*
+      # string (host pooler.supabase.com, port 5432): the direct host resolves
+      # over IPv6 only, which this plan does not have — it works locally and
+      # fails here, the worst way round to find out.
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_JWKS_URL
+        sync: false
+      # The Reviewer's model: a different vendor from the Interviewer, so the
+      # audit's independence is structural (docs/DECISIONS.md). Not a secret.
+      - key: REVIEWER_MODEL
+        value: openai/gpt-5.4
+      # LangSmith: traces of the agents' decisions, redacted before upload
+      # (core/tracing.py). Empty disables tracing entirely.
+      - key: LANGSMITH_API_KEY
+        sync: false
+      # The region, in the repo rather than only in the dashboard: where a German
+      # filer's data physically sits is not a deployment detail, and it should be
+      # visible in a diff. Unset, the SDK falls back to api.smith.langchain.com,
+      # which is GCP US. The key has to belong to an organisation created in this
+      # same region - LangSmith issues keys per organisation and does not move data
+      # between regions. See docs/TRACING_POLICY.md.
+      - key: LANGSMITH_ENDPOINT
+        value: https://eu.api.smith.langchain.com
+      # Declared here so the budget ceiling is tunable in the repo rather than the
+      # dashboard. The free plan runs one instance with one uvicorn worker, so
+      # this is the effective number; the limit is per-worker.
+      - key: RATE_LIMIT_GLOBAL
+        value: "240"

@@ -1,0 +1,284 @@
+{
+  "know-entfernungspauschale-rate": {
+    "search_query": "Entfernungspauschale 2025 Höhe Satz",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1242
+  },
+  "know-homeoffice-pauschale": {
+    "search_query": "Homeoffice Pauschale Betrag Anlage N",
+    "topics": [
+      "homeoffice_pauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1236
+  },
+  "know-arbeitsmittel-gwg": {
+    "search_query": "Arbeitsmittel Laptop Abschreibung Anschaffungskosten Sofortabschreibung Grenze",
+    "topics": [
+      "arbeitsmittel",
+      "expense_classification"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "clarification_required",
+    "cost_tokens": 1267
+  },
+  "know-pauschbetrag": {
+    "search_query": "Arbeitnehmer-Pauschbetrag Höhe 2025",
+    "topics": [
+      "pauschbetrag"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1242
+  },
+  "know-berufsverbaende": {
+    "search_query": "Gewerkschaftsbeiträge Absetzbarkeit Anlage N",
+    "topics": [
+      "berufsverbaende",
+      "anlage_n_grundlagen"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1240
+  },
+  "know-telefon-internet": {
+    "search_query": "Telefon Internet Kosten Abzug ohne Belege Nachweis",
+    "topics": [
+      "telefon_internet",
+      "belege"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1238
+  },
+  "know-verpflegungsmehraufwand": {
+    "search_query": "Verpflegungspauschale Dienstreise Inland",
+    "topics": [
+      "reisekosten"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1252
+  },
+  "know-dhf-miete": {
+    "search_query": "Doppelte Haushaltsführung Miete Abzug Werbungskosten",
+    "topics": [
+      "doppelte_haushaltsfuehrung"
+    ],
+    "line": null,
+    "form_id": "anlage_n_dhf",
+    "intent": "knowledge",
+    "cost_tokens": 1263
+  },
+  "field-zeile-31": {
+    "search_query": "Zeile 31 Anlage N Inhalt",
+    "topics": [
+      "anlage_n_grundlagen",
+      "form_fields"
+    ],
+    "line": 31,
+    "form_id": "anlage_n",
+    "intent": "field_explanation",
+    "cost_tokens": 1255
+  },
+  "field-zeile-53": {
+    "search_query": "Zeile 53 Anlage N Eintrag",
+    "topics": [
+      "anlage_n_grundlagen",
+      "form_fields"
+    ],
+    "line": 53,
+    "form_id": "anlage_n",
+    "intent": "field_explanation",
+    "cost_tokens": 1263
+  },
+  "field-lohnsteuerbescheinigung": {
+    "search_query": "Lohnsteuerbescheinigung Anlage N Eintragung Felder Zeilen",
+    "topics": [
+      "anlage_n_grundlagen",
+      "lohnsteuerbescheinigung"
+    ],
+    "line": null,
+    "form_id": "anlage_n",
+    "intent": "field_explanation",
+    "cost_tokens": 1278
+  },
+  "calc-commute-220-25": {
+    "search_query": "Entfernungspauschale 220 Tage 25 km einfache Entfernung eigenes Auto Berechnung",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": "anlage_n",
+    "intent": "calculation",
+    "cost_tokens": 1300
+  },
+  "calc-homeoffice-150": {
+    "search_query": "Homeoffice-Pauschale 150 Tage Berechnung Absetzbarkeit",
+    "topics": [
+      "homeoffice_pauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "calculation",
+    "cost_tokens": 1255
+  },
+  "calc-arbeitsmittel-afa": {
+    "search_query": "Arbeitsmittel Laptop Abschreibung Anschaffungskosten 2025",
+    "topics": [
+      "arbeitsmittel",
+      "anlage_n_grundlagen"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "calculation",
+    "cost_tokens": 1272
+  },
+  "calc-pauschbetrag-vergleich": {
+    "search_query": "Werbungskosten 1100 Euro Einzelaufstellung oder Pauschbetrag Anlage N",
+    "topics": [
+      "pauschbetrag",
+      "anlage_n_grundlagen"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1264
+  },
+  "clarify-missing-inputs": {
+    "search_query": "Entfernungspauschale Arbeitsweg Berechnung",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "clarification_required",
+    "cost_tokens": 1241
+  },
+  "clarify-vage-arbeitsmittel": {
+    "search_query": "Anschaffungskosten Betriebsausgaben Werbungskosten absetzen",
+    "topics": [
+      "arbeitsmittel",
+      "expense_classification"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "clarification_required",
+    "cost_tokens": 1246
+  },
+  "multiturn-distance-after-days": {
+    "search_query": "Entfernungspauschale 150 Arbeitstage 74 km einfache Entfernung berechnen",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": "anlage_n",
+    "intent": "calculation",
+    "cost_tokens": 1347
+  },
+  "multiturn-followup-cap": {
+    "search_query": "Entfernungspauschale Höchstgrenze 4500 Euro Jahresgrenze",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1314
+  },
+  "ambiguous-arbeitszimmer": {
+    "search_query": "Arbeitszimmer Absetzbarkeit Voraussetzungen",
+    "topics": [
+      "arbeitszimmer"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1231
+  },
+  "ml-ru-homeoffice": {
+    "search_query": "Homeoffice Pauschale 2025 Höhe Betrag",
+    "topics": [
+      "homeoffice_pauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1236
+  },
+  "ml-en-commute": {
+    "search_query": "Entfernungspauschale 2025 Höhe Betrag",
+    "topics": [
+      "entfernungspauschale"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1238
+  },
+  "know-bewerbungskosten": {
+    "search_query": "Bewerbungskosten absetzen erfolglose Bewerbung Anlage N",
+    "topics": [
+      "bewerbungskosten"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1245
+  },
+  "know-umzugskosten-voraussetzung": {
+    "search_query": "Umzugskosten Werbungskosten Geltendmachung Voraussetzungen",
+    "topics": [
+      "umzugskosten"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1251
+  },
+  "field-bewerbungskosten-zeile": {
+    "search_query": "Bewerbungskosten Anlage N Eintragung Zeile",
+    "topics": [
+      "bewerbungskosten",
+      "anlage_n_grundlagen"
+    ],
+    "line": null,
+    "form_id": "anlage_n",
+    "intent": "field_explanation",
+    "cost_tokens": 1259
+  },
+  "know-umzug-dhf-abgrenzung": {
+    "search_query": "Umzugskosten doppelte Haushaltsführung Anlage N Abzug",
+    "topics": [
+      "doppelte_haushaltsfuehrung",
+      "umzugskosten"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1276
+  },
+  "ml-en-bewerbung": {
+    "search_query": "Bewerbungskosten Werbungskosten Steuerermäßigung Anlage N",
+    "topics": [
+      "bewerbungskosten",
+      "anlage_n_grundlagen"
+    ],
+    "line": null,
+    "form_id": null,
+    "intent": "knowledge",
+    "cost_tokens": 1245
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "tax-assistant",
+  "version": "0.1.0",
+  "description": "RAG-powered German tax assistant",
+  "private": true,
+  "workspaces": [
+    "packages/frontend",
+    "packages/backend",
+    "packages/shared"
+  ],
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "dev": "bash scripts/dev.sh",
+    "generate-types": "cd packages/frontend && npm run generate-types",
+    "check:lockfile": "node scripts/check-lockfile-platforms.mjs",
+    "test": "npm run test --workspaces --if-present",
+    "test:backend": "cd packages/backend && pytest",
+    "test:frontend": "cd packages/frontend && npm run test",
+    "lint": "npm run lint --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

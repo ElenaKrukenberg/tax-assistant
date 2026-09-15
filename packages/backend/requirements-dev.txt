@@ -1,0 +1,9 @@
+# Everything only a developer runs. Installed on top of requirements.txt, never by
+# render.yaml's build command: a test runner has no business in the deployed image.
+#
+#   pip install -r requirements.txt -r requirements-dev.txt
+#
+# Pinned against fastapi 0.103 / pydantic 2.7 like the rest of the stack - pytest 8
+# and pytest-asyncio 0.24 are a separate upgrade, not a side effect of this split.
+pytest==7.4.0
+pytest-asyncio==0.21.0

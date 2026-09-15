@@ -1,0 +1,344 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Tailwind v4 preflight leaves buttons with the arrow cursor (v3 gave them the
+   hand). Every interactive control in the app is a <button> or [role="button"]
+   under the hood — shadcn buttons, toggle items, select and collapsible
+   triggers — so restoring the hand here once beats chasing it per component. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@theme inline {
+  /* families come from next/font (app/layout.tsx), which sets these vars on <html> */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-instrument-serif), ui-serif, Georgia, serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --shadow-elevated:
+    0 1px 2px 0 oklch(0.2 0.04 260 / 0.04), 0 8px 24px -8px oklch(0.2 0.04 260 / 0.08);
+  --shadow-input: 0 1px 2px 0 oklch(0.2 0.04 260 / 0.04);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.995 0.002 250);
+  --foreground: oklch(0.19 0.03 260);
+
+  --surface: oklch(1 0 0);
+  --surface-2: oklch(0.975 0.005 250);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.03 260);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.03 260);
+
+  --primary: oklch(0.38 0.14 258);
+  --primary-foreground: oklch(0.99 0.002 250);
+
+  --secondary: oklch(0.965 0.005 250);
+  --secondary-foreground: oklch(0.25 0.03 260);
+
+  --muted: oklch(0.965 0.005 250);
+  --muted-foreground: oklch(0.52 0.02 258);
+
+  --accent: oklch(0.955 0.012 258);
+  --accent-foreground: oklch(0.28 0.06 260);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.99 0.002 250);
+
+  --success: oklch(0.58 0.13 155);
+  --success-foreground: oklch(0.99 0.002 250);
+
+  --warning: oklch(0.72 0.14 75);
+  --warning-foreground: oklch(0.2 0.04 260);
+
+  --border: oklch(0.925 0.008 255);
+  --border-strong: oklch(0.87 0.01 255);
+  --input: oklch(0.925 0.008 255);
+  --ring: oklch(0.5 0.14 258);
+
+  --chart-1: oklch(0.5 0.14 258);
+  --chart-2: oklch(0.65 0.1 220);
+  --chart-3: oklch(0.72 0.09 195);
+  --chart-4: oklch(0.6 0.12 280);
+  --chart-5: oklch(0.55 0.14 240);
+
+  --sidebar: oklch(0.985 0.003 250);
+  --sidebar-foreground: oklch(0.25 0.03 260);
+  --sidebar-primary: oklch(0.38 0.14 258);
+  --sidebar-primary-foreground: oklch(0.99 0.002 250);
+  --sidebar-accent: oklch(0.955 0.012 258);
+  --sidebar-accent-foreground: oklch(0.28 0.06 260);
+  --sidebar-border: oklch(0.925 0.008 255);
+  --sidebar-ring: oklch(0.5 0.14 258);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 260);
+  --foreground: oklch(0.96 0.005 250);
+
+  --surface: oklch(0.2 0.025 260);
+  --surface-2: oklch(0.235 0.028 260);
+
+  --card: oklch(0.205 0.025 260);
+  --card-foreground: oklch(0.96 0.005 250);
+
+  --popover: oklch(0.205 0.025 260);
+  --popover-foreground: oklch(0.96 0.005 250);
+
+  --primary: oklch(0.72 0.13 258);
+  --primary-foreground: oklch(0.16 0.02 260);
+
+  --secondary: oklch(0.26 0.03 260);
+  --secondary-foreground: oklch(0.96 0.005 250);
+
+  --muted: oklch(0.24 0.025 260);
+  --muted-foreground: oklch(0.7 0.02 258);
+
+  --accent: oklch(0.28 0.05 258);
+  --accent-foreground: oklch(0.96 0.005 250);
+
+  --destructive: oklch(0.65 0.2 27);
+  --destructive-foreground: oklch(0.99 0.002 250);
+
+  --success: oklch(0.7 0.13 155);
+  --success-foreground: oklch(0.16 0.02 260);
+
+  --warning: oklch(0.78 0.14 75);
+  --warning-foreground: oklch(0.16 0.02 260);
+
+  --border: oklch(1 0 0 / 8%);
+  --border-strong: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.65 0.13 258);
+
+  --chart-1: oklch(0.65 0.14 258);
+  --chart-2: oklch(0.7 0.11 220);
+  --chart-3: oklch(0.76 0.09 195);
+  --chart-4: oklch(0.65 0.12 280);
+  --chart-5: oklch(0.6 0.14 240);
+
+  --sidebar: oklch(0.185 0.022 260);
+  --sidebar-foreground: oklch(0.96 0.005 250);
+  --sidebar-primary: oklch(0.72 0.13 258);
+  --sidebar-primary-foreground: oklch(0.16 0.02 260);
+  --sidebar-accent: oklch(0.26 0.03 260);
+  --sidebar-accent-foreground: oklch(0.96 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.65 0.13 258);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 20%, transparent);
+    color: var(--foreground);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility text-pretty {
+  text-wrap: pretty;
+}
+
+/* Subtle grid backdrop used sparingly */
+@utility bg-dotgrid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--foreground) 8%, transparent) 1px,
+    transparent 0
+  );
+  background-size: 24px 24px;
+}
+
+/* Stream cursor animation */
+@keyframes gta-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@utility stream-caret {
+  display: inline-block;
+  width: 0.5ch;
+  margin-left: 2px;
+  background: currentColor;
+  animation: gta-blink 1s steps(2, start) infinite;
+  vertical-align: -0.15em;
+  height: 1em;
+  border-radius: 1px;
+}
+
+@keyframes gta-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+@utility shimmer-text {
+  background: linear-gradient(
+    90deg,
+    color-mix(in oklab, var(--muted-foreground) 60%, transparent) 0%,
+    var(--foreground) 50%,
+    color-mix(in oklab, var(--muted-foreground) 60%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gta-shimmer 2.2s linear infinite;
+}
+
+@media print {
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-plain {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    border-color: #ddd !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+/* The developer panel's mermaid diagram: the active node pulses, the SVG fits
+   the panel width. Scoped under .agent-graph so nothing leaks into the app. */
+.agent-graph svg {
+  max-width: 100%;
+  height: auto;
+}
+.agent-graph g.node.active {
+  animation: agent-node-pulse 1.6s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes agent-node-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.agent-graph .edgeLabel {
+  font-size: 10px;
+}
+
+/* The waiting state during an interview advance.
+ *
+ * A quill writing, because the wait is real and unavoidable: about three seconds of
+ * it is the Interviewer deciding what to ask next, and no amount of engineering makes
+ * a model answer faster. What was avoidable was the silence — a boolean question sent
+ * its answer and then nothing on the screen changed at all.
+ *
+ * The nib travels, the ink line draws behind it, both reset together. */
+@keyframes quill-glide {
+  0%   { transform: translateX(0) rotate(-4deg); }
+  55%  { transform: translateX(60px) rotate(4deg); }
+  70%  { transform: translateX(60px) rotate(4deg); }
+  100% { transform: translateX(0) rotate(-4deg); }
+}
+@keyframes quill-ink {
+  0%   { stroke-dashoffset: 64; }
+  55%  { stroke-dashoffset: 0; }
+  70%  { stroke-dashoffset: 0; }
+  71%  { stroke-dashoffset: 64; }
+  100% { stroke-dashoffset: 64; }
+}
+.quill-pen {
+  animation: quill-glide 2.6s ease-in-out infinite;
+  transform-origin: 20% 85%;
+}
+.quill-ink {
+  stroke-dasharray: 64;
+  animation: quill-ink 2.6s ease-in-out infinite;
+}
+
+/* A wait is not a reason to make somebody motion-sick. Without motion the pen simply
+ * sits over a finished line, which still reads as "writing" and never as "frozen". */
+@media (prefers-reduced-motion: reduce) {
+  .quill-pen { animation: none; transform: translateX(30px); }
+  .quill-ink { animation: none; stroke-dashoffset: 0; }
+}

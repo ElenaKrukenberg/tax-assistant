@@ -1,0 +1,195 @@
+{
+  "label": "fixed",
+  "judge": "openai/gpt-4o",
+  "embeddings": "openai/text-embedding-3-small",
+  "skipped": [
+    "oos-cooking",
+    "oos-kapitalertraege",
+    "inj-ignore-instructions",
+    "inj-system-prompt"
+  ],
+  "means": {
+    "faithfulness": 0.5453772868545596,
+    "answer_relevancy": 0.46601881733890393,
+    "context_precision": 0.5655934343186453,
+    "context_recall": 0.6363636363636364
+  },
+  "rows": [
+    {
+      "id": "know-entfernungspauschale-rate",
+      "category": "knowledge",
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.6468954336721191,
+      "context_precision": 0.8666666666377778,
+      "context_recall": 0.5
+    },
+    {
+      "id": "know-homeoffice-pauschale",
+      "category": "knowledge",
+      "faithfulness": 0.9090909090909091,
+      "answer_relevancy": 0.5950542036367021,
+      "context_precision": 0.6791666666496875,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-arbeitsmittel-gwg",
+      "category": "knowledge",
+      "faithfulness": 0.8461538461538461,
+      "answer_relevancy": 0.6215227463884837,
+      "context_precision": 0.7499999999625,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-pauschbetrag",
+      "category": "knowledge",
+      "faithfulness": 0.875,
+      "answer_relevancy": 0.8520755965196176,
+      "context_precision": 0.32499999998375,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-berufsverbaende",
+      "category": "knowledge",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.868662902186389,
+      "context_precision": 0.99999999998,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-telefon-internet",
+      "category": "knowledge",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6496778790739889,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    },
+    {
+      "id": "know-verpflegungsmehraufwand",
+      "category": "knowledge",
+      "faithfulness": 0.5833333333333334,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "id": "know-dhf-miete",
+      "category": "knowledge",
+      "faithfulness": 0.5555555555555556,
+      "answer_relevancy": 0.7526175493037678,
+      "context_precision": 0.499999999975,
+      "context_recall": 0.0
+    },
+    {
+      "id": "field-zeile-31",
+      "category": "field_explanation",
+      "faithfulness": 0.375,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.249999999975,
+      "context_recall": 0.0
+    },
+    {
+      "id": "field-zeile-53",
+      "category": "field_explanation",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.7062521344505935,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "id": "field-lohnsteuerbescheinigung",
+      "category": "field_explanation",
+      "faithfulness": 0.16666666666666666,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "id": "calc-commute-220-25",
+      "category": "calculation",
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.45139840342289134,
+      "context_precision": 0.8333333332916666,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-homeoffice-150",
+      "category": "calculation",
+      "faithfulness": 0.4,
+      "answer_relevancy": 0.5496585192054466,
+      "context_precision": 0.6388888888675925,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-arbeitsmittel-afa",
+      "category": "calculation",
+      "faithfulness": 0.2,
+      "answer_relevancy": 0.6120736801223138,
+      "context_precision": 0.5333333333155555,
+      "context_recall": 1.0
+    },
+    {
+      "id": "calc-pauschbetrag-vergleich",
+      "category": "calculation",
+      "faithfulness": 0.2857142857142857,
+      "answer_relevancy": 0.380420999147901,
+      "context_precision": 0.499999999975,
+      "context_recall": 1.0
+    },
+    {
+      "id": "clarify-missing-inputs",
+      "category": "insufficient_data",
+      "faithfulness": 0.16666666666666666,
+      "answer_relevancy": 0.46962456354190807,
+      "context_precision": 0.0,
+      "context_recall": 0.5
+    },
+    {
+      "id": "clarify-vage-arbeitsmittel",
+      "category": "insufficient_data",
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.6999999999766667,
+      "context_recall": 1.0
+    },
+    {
+      "id": "multiturn-distance-after-days",
+      "category": "multi_turn",
+      "faithfulness": 0.42857142857142855,
+      "answer_relevancy": 0.23475975858923978,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "id": "multiturn-followup-cap",
+      "category": "multi_turn",
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.5437519907332634,
+      "context_precision": 0.4499999999775,
+      "context_recall": 0.0
+    },
+    {
+      "id": "ambiguous-arbeitszimmer",
+      "category": "ambiguous",
+      "faithfulness": 0.4375,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.99999999998,
+      "context_recall": 0.0
+    },
+    {
+      "id": "ml-ru-homeoffice",
+      "category": "multilingual",
+      "faithfulness": 0.7857142857142857,
+      "answer_relevancy": 0.5125019695742725,
+      "context_precision": 0.4166666666458333,
+      "context_recall": 1.0
+    },
+    {
+      "id": "ml-en-commute",
+      "category": "multilingual",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.8054656518869878,
+      "context_precision": 0.9999999999666667,
+      "context_recall": 1.0
+    }
+  ]
+}

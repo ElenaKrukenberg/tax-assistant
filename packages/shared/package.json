@@ -1,0 +1,11 @@
+{
+  "name": "@tax-assistant/shared",
+  "version": "0.1.0",
+  "description": "Shared types and utilities for Tax Assistant",
+  "main": "index.ts",
+  "types": "index.ts",
+  "private": true,
+  "exports": {
+    "./types": "./types/index.ts"
+  }
+}

@@ -1,0 +1,48 @@
+# The application, and the only place its versions are written (#41). Installed
+# everywhere the app runs: scripts/setup.sh locally, render.yaml's build command on
+# Render. Test-only packages live in requirements-dev.txt so they are not shipped to
+# production; RAGAS lives in eval/requirements-eval.txt and its own venv.
+#
+# PYTHON_VERSION in render.yaml is pinned to 3.12.13 against these pins - bump the two
+# together.
+
+fastapi==0.103.2
+uvicorn==0.22.0
+pydantic==2.7.4
+pydantic-settings==2.0.0
+python-dotenv==0.21.1
+# 0.27.x: newest release still compatible with fastapi 0.103 TestClient
+httpx==0.27.2
+chromadb==1.5.9
+
+# Postgres for Tax Cases (ADR 0003). The pool keeps the Supabase session-mode
+# pooler in mind: few connections, held for as long as we hold them.
+psycopg[binary,pool]==3.3.4
+
+# The Tax Case graph: interrupts for HITL and the Postgres checkpointer that lets a
+# paused interview survive a new session (ADR 0005: tables hold the case, the
+# checkpointer holds only the paused run).
+langgraph==1.2.11
+langgraph-checkpoint-postgres==3.1.2
+
+# Supabase JWT verification against the project's JWKS (ES256 — hence crypto).
+PyJWT[crypto]==2.13.0
+langchain-core==1.5.2
+langchain-openai==1.1.14
+# Transitive via langchain-openai, pinned because core/embeddings.py imports OpenAIError
+# directly: provider failures are wrapped in our LLMError, our own bugs are not.
+openai==2.49.0
+
+# The filled Anlage N: reportlab draws the figures, pypdf merges them onto the
+# official blank. Deliberately not pdfplumber — the box coordinates were measured
+# offline into data/anlage-n-2025-boxes.json, so no PDF parser ships to production.
+pypdf==6.16.1
+reportlab==5.0.1
+
+# Imported directly by core/tracing.py. It also arrives transitively via langchain-core,
+# which is exactly why it is pinned here: an import we make ourselves must not depend on
+# another package's dependency graph to keep existing.
+langsmith==0.10.11
+
+python-json-logger==2.0.7
+structlog==23.1.0

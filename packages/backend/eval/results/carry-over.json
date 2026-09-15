@@ -1,0 +1,174 @@
+{
+  "carry_over_fields": [
+    "entfernungspauschale.distance_km",
+    "entfernungspauschale.own_car",
+    "homeoffice_tagespauschale.other_workplace_available"
+  ],
+  "totals": {
+    "profiles": 10,
+    "saved": 24,
+    "on_the_card": 24,
+    "lost_required": 0,
+    "profiles_helped": 10
+  },
+  "runs": [
+    {
+      "profile_id": "p01-remote-with-laptop",
+      "label": "Remote employee, one employer, all year, two office days a week, 18 km, bought a laptop",
+      "first_year_questions": 21,
+      "second_year_questions": 18,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p02-commuter-reimbursed",
+      "label": "Daily commute of 42 km by train, employer reimburses part of the ticket",
+      "first_year_questions": 15,
+      "second_year_questions": 13,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p03-below-pauschbetrag",
+      "label": "Short commute, nothing else — the total cannot reach the Pauschbetrag",
+      "first_year_questions": 14,
+      "second_year_questions": 12,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p04-half-year-then-alg1",
+      "label": "Employed January to June, then Arbeitslosengeld I",
+      "first_year_questions": 18,
+      "second_year_questions": 16,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p05-parental-leave",
+      "label": "Five months of Elternzeit, employed the rest of the year",
+      "first_year_questions": 21,
+      "second_year_questions": 18,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p06-job-change",
+      "label": "Changed employer in July; two workplaces at different distances",
+      "first_year_questions": 22,
+      "second_year_questions": 20,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p07-minijob-alongside",
+      "label": "Main job plus a flat-taxed Minijob",
+      "first_year_questions": 15,
+      "second_year_questions": 13,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p08-training-and-equipment",
+      "label": "A certification course, a monitor below the threshold and a laptop above it",
+      "first_year_questions": 26,
+      "second_year_questions": 23,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p09-relocation",
+      "label": "Moved for a new job in April",
+      "first_year_questions": 19,
+      "second_year_questions": 17,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car"
+      ],
+      "lost_required": []
+    },
+    {
+      "profile_id": "p10-first-job-in-september",
+      "label": "First job from September, four months, applications before that",
+      "first_year_questions": 24,
+      "second_year_questions": 21,
+      "carried": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "on_the_card": [
+        "entfernungspauschale.distance_km",
+        "entfernungspauschale.own_car",
+        "homeoffice_tagespauschale.other_workplace_available"
+      ],
+      "lost_required": []
+    }
+  ]
+}

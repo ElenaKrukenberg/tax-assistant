@@ -1,0 +1,110 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm
+
+# Next.js
+.next/
+out/
+.turbo/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+/lib/
+/lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+data/
+*.db
+chroma/
+chroma_data/
+.tanstack/
+
+# Russian working docs: local only, never pushed (docs/ is the English set)
+docs_ru/
+
+# Claude Code — machine-local permission rules, which record literal commands
+# and so can end up holding a credential that was inlined into one
+.claude/settings.local.json
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+*.tsbuildinfo
+venv-eval/
+
+# ELSTER developer materials: the ERiC licence agreement and the data-protection
+# sheet it obliges us to show end users. Kept locally, never committed — § 14 of the
+# agreement binds us to confidentiality, the documents come from an account-gated
+# developer area, and the personal remote is a public repository. Both spellings are
+# listed because the directory was renamed; keeping the old one costs nothing.
+elster/
+elster_eric/
+
+# Public official forms and instructions. Keep the downloaded files locally with
+# provenance; only reviewed/normalized material is promoted into KB/ or application
+# form assets.
+official_sources/forms/
+
+# Local working material: kept out of git by request. official_sources/ holds
+# downloaded official form PDFs and their notes; MCP_SOURCE_SYNC_RESEARCH.md is a
+# local scratch document.
+official_sources/
+docs/MCP_SOURCE_SYNC_RESEARCH.md
+
+# The working agreement Claude Code reads at the start of a session. Local by
+# request: it is instructions to a tool, not part of the product.
+CLAUDE.md
+
+# Slide-deck build output. presentation/ is regenerated from its sources by the
+# pptx tooling; .codex-finalizer/ and .chart-data-* are that tooling's scratch
+# directories - candidate decks, inspection dumps and chart snapshots.
+presentation/
+.codex-finalizer/
+.chart-data-*/
